@@ -32,7 +32,7 @@ CREATE TABLE Ratings (
 
 -- Create the Mentions table
 CREATE TABLE Mentions (
-    mention_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    mention_id SERIAL PRIMARY KEY,
     user_id INT REFERENCES Users(user_id),
     book_id INT REFERENCES Books(book_id),
     mentioned BOOLEAN NOT NULL,
