@@ -1,7 +1,7 @@
 const db = require("../db"); // Import your database connection
 
-const WatchLinkClicks = {
-  // Count watch link clicks
+const ReadBookClicks = {
+  // Count read book clicks
   create: (user_id, book_id) => {
     return db.query(
       "INSERT INTO Read_Book_Clicks (user_id, book_id, click) VALUES ($1, $2, true) RETURNING *",
@@ -10,4 +10,4 @@ const WatchLinkClicks = {
   },
 };
 
-module.exports = WatchLinkClicks;
+module.exports = ReadBookClicks;
