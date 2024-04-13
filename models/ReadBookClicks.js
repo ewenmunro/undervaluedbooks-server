@@ -8,6 +8,18 @@ const ReadBookClicks = {
       [user_id, book_id]
     );
   },
+
+  // Delete read book clicks associate with user
+  delete: async (userId) => {
+    try {
+      const query = "DELETE FROM read_book_clicks WHERE user_id = $1";
+      const values = [userId];
+      const result = await db.query(query, values);
+      return result.rows;
+    } catch (error) {
+      throw error;
+    }
+  },
 };
 
 module.exports = ReadBookClicks;
